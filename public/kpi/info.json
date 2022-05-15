@@ -1,0 +1,771 @@
+{
+    "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+    ],
+    "kpi": [
+        {
+            "name": "society",
+            "children": [
+                {
+                    "name": "education",
+                    "children": [
+                        {
+                            "name": "students ict access"
+                        },
+                        {
+                            "name": "school enrollment"
+                        },
+                        {
+                            "name": "higher education degrees"
+                        },
+                        {
+                            "name": "adult literacy"
+                        }
+                    ]
+                },
+                {
+                    "name": "health",
+                    "children": [
+                        {
+                            "name": "electronic health records"
+                        },
+                        {
+                            "name": "life expectancy"
+                        },
+                        {
+                            "name": "maternal mortality rate"
+                        },
+                        {
+                            "name": "doctors"
+                        },
+                        {
+                            "name": "health insurance coverage"
+                        },
+                        {
+                            "name": "in-patient hospital beds"
+                        }
+                    ]
+                },
+                {
+                    "name": "culture",
+                    "children": [
+                        {
+                            "name": "cultural expenditure"
+                        },
+                        {
+                            "name": "cultural infrastructure"
+                        }
+                    ]
+                },
+                {
+                    "name": "housing",
+                    "children": [
+                        {
+                            "name": "informal settlements"
+                        },
+                        {
+                            "name": "housing expenditure"
+                        }
+                    ]
+                },
+                {
+                    "name": "social inclusion",
+                    "children": [
+                        {
+                            "name": "gender income equity"
+                        },
+                        {
+                            "name": "gini coefficient"
+                        },
+                        {
+                            "name": "poverty"
+                        },
+                        {
+                            "name": "voter participation"
+                        },
+                        {
+                            "name": "child care availability"
+                        }
+                    ]
+                },
+                {
+                    "name": "safety",
+                    "children": [
+                        {
+                            "name": "natural disaster related deaths"
+                        },
+                        {
+                            "name": "disaster related economic losses"
+                        },
+                        {
+                            "name": "resilience plans"
+                        },
+                        {
+                            "name": "at risk population"
+                        },
+                        {
+                            "name": "Emergency service response time"
+                        },
+                        {
+                            "name": "police service"
+                        },
+                        {
+                            "name": "fire service"
+                        },
+                        {
+                            "name": "violent crime rate"
+                        },
+                        {
+                            "name": "transportation fatalities"
+                        }
+                    ]
+                },
+                {
+                    "name": "food security",
+                    "children": [
+                        {
+                            "name": "local food production"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "economy",
+            "children": [
+                {
+                    "name": "ict infrastructure",
+                    "children": [
+                        {
+                            "name": "household internet access"
+                        },
+                        {
+                            "name": "fixed broadband subscriptions"
+                        },
+                        {
+                            "name": "wireless broadband subscription"
+                        },
+                        {
+                            "name": "wireless broadband coverage 3G"
+                        },
+                        {
+                            "name": "wireless broadband coverage 4G"
+                        },
+                        {
+                            "name": "availability of wifi in public areas"
+                        }
+                    ]
+                },
+                {
+                    "name": "water and sanitation",
+                    "children": [
+                        {
+                            "name": "smart water meters"
+                        },
+                        {
+                            "name": "water supply ict monitoring"
+                        },
+                        {
+                            "name": "basic water supply"
+                        },
+                        {
+                            "name": "potable water supply"
+                        },
+                        {
+                            "name": "water supply loss"
+                        },
+                        {
+                            "name": "wastewater collection"
+                        },
+                        {
+                            "name": "household sanitation"
+                        }
+                    ]
+                },
+                {
+                    "name": "drainage",
+                    "children": [
+                        {
+                            "name": "drainage / storm water system ict monitoring"
+                        }
+                    ]
+                },
+                {
+                    "name": "electricity supply",
+                    "children": [
+                        {
+                            "name": "smart electricity meters"
+                        },
+                        {
+                            "name": "electricity supply ict monitoring"
+                        },
+                        {
+                            "name": "demand response penetration"
+                        },
+                        {
+                            "name": "electricity system outage frequency"
+                        },
+                        {
+                            "name": "electricity system outage time"
+                        },
+                        {
+                            "name": "access to electricity"
+                        }
+                    ]
+                },
+                {
+                    "name": "transport",
+                    "children": [
+                        {
+                            "name": "dynamic public transport information"
+                        },
+                        {
+                            "name": "traffic monitoring"
+                        },
+                        {
+                            "name": "intersection control"
+                        },
+                        {
+                            "name": "public transit network"
+                        },
+                        {
+                            "name": "public transit network convenience"
+                        },
+                        {
+                            "name": "bicycle network"
+                        },
+                        {
+                            "name": "transportation mode share private vehicles"
+                        },
+                        {
+                            "name": "transportation mode share public transport"
+                        },
+                        {
+                            "name": "transportation mode share walking"
+                        },
+                        {
+                            "name": "transportation mode share cycling"
+                        },
+                        {
+                            "name": "transportation mode share paratransport"
+                        },
+                        {
+                            "name": "travel time index"
+                        },
+                        {
+                            "name": "shared bicycles"
+                        },
+                        {
+                            "name": "shared vehicles"
+                        },
+                        {
+                            "name": "low-carbon emission vehicles"
+                        }
+                    ]
+                },
+                {
+                    "name": "public service",
+                    "children": [
+                        {
+                            "name": "open data sets published"
+                        },
+                        {
+                            "name": "open data sets %"
+                        },
+                        {
+                            "name": "e-government"
+                        },
+                        {
+                            "name": "public sector e-procurement"
+                        }
+                    ]
+                },
+                {
+                    "name": "innovation",
+                    "children": [
+                        {
+                            "name": "R&D expenditure"
+                        },
+                        {
+                            "name": "patents"
+                        },
+                        {
+                            "name": "small and medium-sized enterprises"
+                        }
+                    ]
+                },
+                {
+                    "name": "employment",
+                    "children": [
+                        {
+                            "name": "unemployment rate"
+                        },
+                        {
+                            "name": "youth unemployment rate"
+                        },
+                        {
+                            "name": "tourism industry employment"
+                        },
+                        {
+                            "name": "ict industry employment"
+                        }
+                    ]
+                },
+                {
+                    "name": "waste",
+                    "children": [
+                        {
+                            "name": "solid waste collection"
+                        }
+                    ]
+                },
+                {
+                    "name": "buildings",
+                    "children": [
+                        {
+                            "name": "public building sustainability"
+                        },
+                        {
+                            "name": "integrated building management systems"
+                        }
+                    ]
+                },
+                {
+                    "name": "urban planning",
+                    "children": [
+                        {
+                            "name": "pedestrian infrastructure"
+                        },
+                        {
+                            "name": "urban development and spatial planning"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "environment",
+            "children": [
+                {
+                    "name": "air quality",
+                    "children": [
+                        {
+                            "name": "air pollution PM2.5"
+                        },
+                        {
+                            "name": "air pollution PM10"
+                        },
+                        {
+                            "name": "air pollution NO2"
+                        },
+                        {
+                            "name": "air pollution SO2"
+                        },
+                        {
+                            "name": "air pollution O3"
+                        },
+                        {
+                            "name": "ghg emissions"
+                        }
+                    ]
+                },
+                {
+                    "name": "waster and sanitation",
+                    "children": [
+                        {
+                            "name": "drinking water quality"
+                        },
+                        {
+                            "name": "water consumption"
+                        },
+                        {
+                            "name": "fresh water consumption"
+                        },
+                        {
+                            "name": "wastewater treated primary"
+                        },
+                        {
+                            "name": "wastewater treated secondary"
+                        },
+                        {
+                            "name": "wastewater treated tertiary"
+                        }
+                    ]
+                },
+                {
+                    "name": "waste",
+                    "children": [
+                        {
+                            "name": "solid waste treatment landfill"
+                        },
+                        {
+                            "name": "solid waste treatment burnt"
+                        },
+                        {
+                            "name": "solid waste treatment incinerated"
+                        },
+                        {
+                            "name": "solid waste treatment recycled"
+                        },
+                        {
+                            "name": "solid waste treatment other"
+                        },
+                        {
+                            "name": "solid waste treatment open dump"
+                        }
+                    ]
+                },
+                {
+                    "name": "environment quality",
+                    "children": [
+                        {
+                            "name": "emf exposure"
+                        },
+                        {
+                            "name": "noise exposure"
+                        }
+                    ]
+                },
+                {
+                    "name": "public space and nature",
+                    "children": [
+                        {
+                            "name": "green areas"
+                        },
+                        {
+                            "name": "green area accessibility"
+                        },
+                        {
+                            "name": "protected areas"
+                        },
+                        {
+                            "name": "recreational facilities"
+                        }
+                    ]
+                },
+                {
+                    "name": "energy",
+                    "children": [
+                        {
+                            "name": "renewable energy consumption"
+                        },
+                        {
+                            "name": "electricity consumption"
+                        },
+                        {
+                            "name": "residential thermal energy consumption"
+                        },
+                        {
+                            "name": "public building energy consumption"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "areas": [
+        {
+            "name": "Ålesund",
+            "datasetname":"aalesund",
+            "geojson": {
+            	"type": "FeatureCollection",
+            	"features": [
+            	    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates":
+                                [[[6.22187, 62.48147],
+                                [6.23833, 62.48087],
+                                [6.2443, 62.48001],
+                                [6.25128, 62.47902],
+                                [6.25552, 62.47841],
+                                [6.25787, 62.4762],
+                                [6.25686, 62.47537],
+                                [6.24928, 62.47486],
+                                [6.24547, 62.47374],
+                                [6.237, 62.47125],
+                                [6.23055, 62.47178],
+                                [6.21948, 62.47271],
+                                [6.20533, 62.46856],
+                                [6.1926, 62.47087],
+                                [6.16251, 62.47043],
+                                [6.13243, 62.47],
+                                [6.13191, 62.47711],
+                                [6.13192, 62.47711],
+                                [6.13939, 62.47911],
+                                [6.17129, 62.48],
+                                [6.17234, 62.48003],
+                                [6.183, 62.48127],
+                                [6.20581, 62.48392],
+                                [6.21401, 62.48197],
+                                [6.21507, 62.48172],
+                                [6.22187, 62.48147]]]
+                        }
+            	    },
+            	    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [6.1714094, 62.4681226]
+                        }
+				    }
+            	] 
+            }
+        },
+        {
+            "name": "Asker",
+            "datasetname":"asker",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [10.4366, 59.8346]
+                }
+            }
+        },
+        {
+            "name": "Bærum",
+            "datasetname":"barum",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [10.4786, 59.9574]
+                }
+            }
+        },
+        {
+            "name": "Karmøy",
+            "datasetname":"karmoy",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.2802, 59.2823]
+                }
+            }
+        },
+        {
+            "name": "Haugesund",
+            "datasetname":"haugesund",
+            "geojson": {
+            	"type": "FeatureCollection",
+            	"features": [
+            	    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "properties": {},
+                            "coordinates":
+                                [[[5.28661, 59.39528],
+                                [5.28081, 59.39383],
+                                [5.25331, 59.42492],
+                                [5.25569, 59.42975],
+                                [5.25825, 59.43536],
+                                [5.26678, 59.43292],
+                                [5.27061, 59.43184],
+                                [5.26794, 59.42664],
+                                [5.27186, 59.425],
+                                [5.28842, 59.42303],
+                                [5.2885, 59.41897],
+                                [5.28853, 59.4175],
+                                [5.28381, 59.41383],
+                                [5.29311, 59.41222],
+                                [5.29436, 59.4095],
+                                [5.29458, 59.40905],
+                                [5.28608, 59.40636],
+                                [5.28553, 59.4045],
+                                [5.29139, 59.39697],
+                                [5.28661, 59.39528]]]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [5.268, 59.4136]
+                        }
+                    }
+            	] 
+            }
+        },
+        {
+            "name": "Trondheim",
+            "datasetname":"trondheim",
+            "geojson": {
+            	"type": "FeatureCollection",
+            	"features": [
+            	    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "properties": {},
+                            "coordinates":
+                                [[[10.40272, 63.39536],
+                                [10.3965, 63.39756],
+                                [10.39322, 63.39878],
+                                [10.37764, 63.39636],
+                                [10.35786, 63.3935],
+                                [10.32336, 63.39189],
+                                [10.31139, 63.38586],
+                                [10.30158, 63.38989],
+                                [10.28853, 63.39892],
+                                [10.32061, 63.41058],
+                                [10.34503, 63.41075],
+                                [10.3465, 63.41233],
+                                [10.35578, 63.42225],
+                                [10.34236, 63.42761],
+                                [10.35636, 63.43411],
+                                [10.35092, 63.44367],
+                                [10.35764, 63.44508],
+                                [10.36119, 63.44586],
+                                [10.36275, 63.44372],
+                                [10.36525, 63.4403],
+                                [10.37508, 63.43375],
+                                [10.39233, 63.43581],
+                                [10.39283, 63.43586],
+                                [10.40936, 63.44645],
+                                [10.417, 63.4458],
+                                [10.42267, 63.44286],
+                                [10.43128, 63.44495],
+                                [10.43528, 63.44769],
+                                [10.43264, 63.45203],
+                                [10.43714, 63.4557],
+                                [10.44481, 63.45458 ],
+                                [10.45211, 63.44641],
+                                [10.472, 63.44489],
+                                [10.48469, 63.44678],
+                                [10.49844, 63.44636],
+                                [10.51639, 63.4398],
+                                [10.53478, 63.43625],
+                                [10.54236, 63.43878],
+                                [10.54986, 63.438],
+                                [10.54989, 63.43797],
+                                [10.55481, 63.43403],
+                                [10.55911, 63.43333],
+                                [10.57425, 63.43095],
+                                [10.57447, 63.43033],
+                                [10.57533, 63.4282],
+                                [10.56236, 63.41947 ],
+                                [10.54797, 63.42125],
+                                [10.54794, 63.42125],
+                                [10.54025, 63.42222 ],
+                                [10.53786, 63.4225],
+                                [10.52467, 63.42197],
+                                [10.491, 63.42497 ],
+                                [10.48192, 63.42216],
+                                [10.47414, 63.41161],
+                                [10.46614, 63.407],
+                                [10.43883, 63.40272],
+                                [10.432, 63.39492],
+                                [10.42361, 63.39417],
+                                [10.40764, 63.39339],
+                                [10.40272, 63.39536]]]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [10.3687237, 63.4187959]
+                        }
+                    }
+            	] 
+            }
+        },
+        {
+            "name": "Kristiansund",
+            "datasetname":"kristiansund",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.7281, 63.1103]
+                }
+            }
+        },
+        {
+            "name": "Molde",
+            "datasetname":"molde",
+            "geojson": {
+            	"type": "FeatureCollection",
+            	"features": [
+            	    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates":
+                                [[[7.19756, 62.74847],
+                                [7.20506, 62.74911],
+                                [7.22497, 62.75086],
+                                [7.22628, 62.7475],
+                                [7.2275, 62.7443],
+                                [7.22764, 62.73767],
+                                [7.22575, 62.73739],
+                                [7.21603, 62.73594],
+                                [7.21503, 62.73581],
+                                [7.151, 62.73431],
+                                [7.12428, 62.7355],
+                                [7.12267, 62.73956],
+                                [7.12631, 62.74383],
+                                [7.16239, 62.74947],
+                                [7.17303, 62.75895],
+                                [7.17792, 62.75956],
+                                [7.19667, 62.75736],
+                                [7.19514, 62.75511],
+                                [7.19131, 62.74942],
+                                [7.19347, 62.74811],
+                                [7.19756, 62.74847]]]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {},
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [7.1607, 62.7372]
+                        }
+                    }
+            	] 
+            }
+        },
+        {
+            "name": "Bodø",
+            "datasetname":"bodo",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [14.4125194, 67.2916]
+                }
+            }
+        },
+        {
+            "name": "Rana",
+            "datasetname":"rana",
+            "geojson": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [14.3122, 66.4393]
+                }
+            }
+        }
+    ]
+}

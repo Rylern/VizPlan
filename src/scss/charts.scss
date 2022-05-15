@@ -1,0 +1,64 @@
+#graph{
+	width: 35%;
+	height: 45%;
+	z-index: 2000;
+	position: absolute;
+}
+
+#rankings{
+	margin-top: 15px;
+	width: 35%;
+	height: 45%;
+	z-index: 2000;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: 0.5rem;
+}
+
+#rankings_chart {
+	width : 100%;
+	height: 100%;
+}
+
+.buttons {
+    min-width: 310px;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0;
+    z-index: 3000;
+}
+
+.buttons button {
+cursor: pointer;
+    border: 1px solid silver;
+    border-right-width: 0;
+    background-color: #f8f8f8;
+    font-size: 1rem;
+    padding: 0.5rem;
+    outline: none;
+    transition-duration: 0.3s;
+}
+
+.buttons button:first-child {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+}
+
+.buttons button:last-child {
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    border-right-width: 1px;
+}
+
+.buttons button:hover {
+    color: white;
+    background-color: rgb(158, 159, 163);
+    outline: none;
+}
+
+.buttons button.active {
+    background-color: #3c4962;
+    color: white;
+}

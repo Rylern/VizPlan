@@ -1,0 +1,33 @@
+.vertical-scrollbar {
+    z-index: 1000;
+    width: 250px;
+    position: absolute;
+    right: 0px;
+    background-color: #191f2b;
+    text-align: center;
+    display: none;
+    border-radius: 1px;
+}
+
+.vertical-scrollbar h1{
+    margin: .5em 1.5em;
+    font-size: 1.7em;
+}
+
+.vertical-scrollbar button {
+    background-color: #3c4963;
+    color: white;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 10px;
+}
+
+.vertical-scrollbar button:hover {
+    background-color: #59719e;
+}

@@ -1,0 +1,146 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    padding-top: 75px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #3d4a64;
+    margin: auto;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 60%;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    font-size: 1.1em;
+}
+
+.modal-content .topbar {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: #2b3548;
+    box-shadow: 0 6px 6px 0px #222d4240;
+}
+
+.modal-content h1 {
+    color: #afcff6;
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: bold;
+    margin:15px 10px;
+}
+
+.modal-close {
+    color: #eb0d0d;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #b32020;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content .content {
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.modal-content a {
+    color: #b2b3b6;
+    cursor: pointer;
+}
+
+.modal-content ul {
+    margin: 0;
+}
+
+.modal-content .inline_p_top {
+    margin-bottom: 0;
+}
+
+.modal-content .inline_p_bottom {
+    margin-top: 0;
+}
+
+.modal-content #KPI_example {
+    list-style-type: none;
+    border-left: 3px solid #282829;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+.modal-content .line-form {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal-content label {
+    display: inline-block;
+    width: 30%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.modal-content input {
+    display: inline-block;
+    width: 65%;
+}
+
+.modal-content input[type=submit] {
+    width: auto;
+    background-color: #389b19;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-color: black;
+}
+
+.modal-content input[type=submit]:hover {
+    background-color: #318b16;
+}
+
+.remove_area .modal-content input[type=submit] {
+    background-color: #ac2020;
+}
+
+.remove_area .modal-content input[type=submit]:hover {
+    background-color: #8a1818;
+}
+
+.define_kpi .years_input {
+    display: flex;
+    flex-direction: row;
+}
+.define_kpi .years_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.modal-content #define_KPI_csv_example {
+    list-style-type: none;
+    border-left: 3px solid #282829;
+}

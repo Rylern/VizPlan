@@ -1,0 +1,170 @@
+.ranking_clustering_container {
+	overflow: hidden;
+	z-index: 1000;
+	background-color: #3c4962;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100vh;
+    transform: translateX(-100vw);
+}
+
+.ranking_clustering_container .close {
+	position: absolute;
+	right: 0px;
+    margin: .25rem 0.5rem;
+}
+
+.ranking_clustering_container h1 {
+	color: #afcff6;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: bold;
+	background-color: #2b3548;
+    margin: 0;
+    padding: 10px;
+}
+
+.ranking_clustering_container .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+.ranking_clustering_container .first-half-content {
+    width: 40%;
+    padding: 20px;
+}
+
+.ranking_clustering_container .second-half-content {
+    width: 40%;
+    text-align: center;
+    overflow: auto;
+    max-height: 80vh;
+}
+
+.ranking_clustering_container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+	border: 2px solid #303b50;
+    border-radius: 5px;
+}
+
+.ranking_clustering_container .line-form {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.ranking_clustering_container .form-label {
+    width: 30%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.ranking_clustering_container .line-form div {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.ranking_clustering_container input[type=number] {
+    width: 3em;
+}
+
+.clustering-ranking-kpi-list {
+    max-height: 50vh;
+    overflow: auto;
+    list-style-type: none;
+}
+
+.ranking_clustering_container input[type=submit] {
+    width: auto;
+    background-color: #42976f;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-color: black;
+}
+
+.ranking_clustering_container input[type=submit]:hover {
+    background-color: #357959;
+}
+
+.ranking_clustering_container a {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.ranking_clustering_container .expand {
+    color: #8d8e91;
+}
+
+.ranking_clustering_container table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #303b50;
+    border-radius: 5px;
+}
+
+.ranking_clustering_container th {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.ranking_clustering_container td {
+    padding: 15px;
+    text-align: left;
+}
+
+.ranking_clustering_container .line-table:hover {
+	background-color: #313b52;
+    cursor: pointer;
+}
+
+.ranking_clustering_container #tooltip {
+    background-color: #191f2b;
+        z-index: 2000;
+    position: absolute;
+    text-align: center;
+        border-radius: 1px;
+    display: none;
+    transform: translate(-50%, -50%);
+}
+
+.ranking_clustering_container #tooltip button {
+    background-color: #273041;
+    color: white;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px 10px;
+}
+
+.ranking_clustering_container #tooltip button:hover {
+    background-color: #59719e;
+}
+
+.ranking_clustering_container p {
+    text-align: left;
+}
+
+.ranking_clustering_container strong {
+    font-size: 1.5em;
+}

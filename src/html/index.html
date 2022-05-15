@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>VizPlan</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+			integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+			crossorigin=""
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+		<script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+		<link rel="stylesheet" href="/style/main.css" />
+		<link rel="icon" type="image/png" href="public/icon.png">
+	</head>
+	<body>
+		<header>
+			<h1>VIZPLAN</h1>
+			<div id="bar_menu" class="bar_menu">
+				<div></div>
+				<div></div>
+				<div></div> 
+			</div>
+		</header>
+		<div id="vertical-scrollbar" class="vertical-scrollbar">
+			<h1>Options</h1>
+			<button id="btn_add_areas">Add an area</button>
+			<button id="btn_edit_areas">Edit an area</button>
+			<button id="btn_remove_areas">Remove an area</button>
+			<button id="btn_open_ranking">Rank areas</button>
+			<button id="btn_open_clustering">Cluster areas</button>
+			<button id="btn_define_kpi">Define new KPI</button>
+		</div>
+		<div id="logo_ntnu"><img src="public/NTNU_logo_BW.png" alt="NTNU" class="logo_ntnu"></div>
+		<div id="logo_SA"><img src="public/SA_logo_Color.png" alt="Sustainability Analytics" class="logo_SA"></div>
+		<div id="leaflet-map"></div>
+		<div id="add_areas_window" class="modal">
+			<div class="modal-content">
+				<div class="topbar">
+					<div id="modal-close_add_areas" class="modal-close">&times;</div>
+					<h1>ADD AN AREA</h1>
+				</div>
+				<div class="content">
+					<p>
+						You have the possibility to add a new area to the platform by providing its <strong>name</strong>, <strong>location</strong> with a GeoJSON file and a list of corresponding <strong>KPI</strong> with a CSV file.
+					</p>
+
+					<p class="inline_p_top">
+						GeoJSON is an open standard format designed for representing simple geographical features.<br>
+						The format is described by the <a href="https://datatracker.ietf.org/doc/html/rfc7946" target="_blank">GeoJSON Specification (RFC 7946)</a>.<br>
+						Example of a GeoJSON file: <a id="show_GeoJSON_example">[show]</a>
+					</p>
+					<p id="GeoJSON_example" class="inline_p_bottom">
+						{<br>
+							&nbsp;"type": "Feature",<br>
+							&nbsp;"properties": {},<br>
+							&nbsp;"geometry": {<br>
+								&nbsp;&nbsp;"type": "Polygon",<br>
+								&nbsp;&nbsp;"coordinates":<br>
+									&nbsp;&nbsp;&nbsp;[[[6.098008, 62.490350],<br>
+									&nbsp;&nbsp;&nbsp;[6.335349, 62.490350],<br>
+									&nbsp;&nbsp;&nbsp;[6.335349, 62.446854],<br>
+									&nbsp;&nbsp;&nbsp;[6.098008, 62.446854],<br>
+									&nbsp;&nbsp;&nbsp;[6.098008, 62.490350]]]<br>
+							&nbsp;}<br>
+						}
+					</p>
+
+					<p class="inline_p_top">
+						Each line of the KPI CSV file must correspond to the following format:<br>
+						&nbsp;<code>KPI,Score,Year,Month</code>
+						<br>where:
+					</p>
+					<ul>
+						<li>
+							<code>KPI</code> corresponds to the name of the KPI. List of available KPIs: <a id="show_KPI_list">[show]</a>
+							<ul id="list_KPI"></ul>
+						</li>
+						<li><code>Score</code> corresponds to the associated value (in %, from 0 to 100).</li>
+						<li>
+							<code>Year</code> corresponds to the associated year. The available years are:
+							<ul id="list_years"></ul>
+						</li>
+						<li><code>Month</code> corresponds to the associated month (from 1 to 12). If data is not available for each month, simply put 0 to indicate the value for the entire year.</li>
+					</ul>
+					<p class="inline_p_bottom">
+						Example of a CSV file: <a id="show_KPI_example">[show]</a>
+					</p>
+					<ul id="KPI_example">
+						<li>society,50,2019,0</li>
+						<li>higher education degrees,83.65,2019,1</li>
+						<li>higher education degrees,60,2019,2</li>
+						<li>higher education degrees,0,2019,3</li>
+						<li>higher education degrees,14,2019,4</li>
+						<li>higher education degrees,96.3,2019,5</li>
+						<li>higher education degrees,5.03,2019,6</li>
+						<li>higher education degrees,88,2019,7</li>
+						<li>higher education degrees,100,2019,8</li>
+						<li>higher education degrees,30.65,2019,9</li>
+						<li>higher education degrees,74.6,2019,10</li>
+						<li>higher education degrees,85.3,2019,11</li>
+						<li>higher education degrees,5.2,2019,12</li>
+					</ul>
+					
+					<br><br>
+					<form action="/addArea" method="post" enctype="multipart/form-data">
+						<div class="line-form">
+							<label for="modal-area-name">Name of the area</label>
+							<input type="text" id="modal-area-name" name="area-name" required>
+						</div>
+						<div class="line-form">
+							<label for="geojson">GeoJSON file</label>
+							<input id="geojson" type="file" name="geojson" accept=".geojson" required>
+						</div>
+						<div class="line-form">
+							<label for="kpi_csv">KPI file</label>
+							<input id="kpi_csv" type="file" name="kpi_csv" accept=".csv" required>
+						</div>
+						<div class="line-form">
+							<input type="submit" value="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="edit_areas_window" class="modal">
+			<div class="modal-content">
+				<div class="topbar">
+					<div id="modal-close_edit_areas" class="modal-close">&times;</div>
+					<h1>EDIT AN AREA</h1>
+				</div>
+				<div class="content">
+					<p>
+						You have the possibility to edit an existing area by changing its <strong>location</strong> with a GeoJSON file and by providing a list of <strong>KPI</strong> with a CSV file.
+					</p>
+					<p>
+						The files must comply with the formats described in the add area window.
+					</p>
+					<br><br>
+					<form action="/editArea" method="post" enctype="multipart/form-data">
+						<div class="line-form">
+							<select id="edit_list_areas" name="list_areas"></select>
+						</div>
+						<div class="line-form">
+							<label for="edit_geojson">GeoJSON file</label>
+							<input id="edit_geojson" type="file" name="geojson" accept=".geojson">
+						</div>
+						<div class="line-form">
+							<label for="edit_kpi_csv">KPI CSV file</label>
+							<input id="edit_kpi_csv" type="file" name="kpi_csv" accept=".csv">
+						</div>
+						<div class="line-form">
+							<input type="submit" value="Edit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="remove_areas_window" class="modal remove_area">
+			<div class="modal-content">
+				<div class="topbar">
+					<div id="modal-close_remove_areas" class="modal-close">&times;</div>
+					<h1>REMOVE AN AREA</h1>
+				</div>
+				<div class="content">
+					<p>You have the possibility to remove an area from the map.<br>This operation is <strong>irreversible</strong>.</p>
+					<form action="/deleteArea" method="post" enctype="multipart/form-data">
+						<div class="line-form">
+							<select id="list_areas" name="list_areas"></select>
+						</div>
+						<div class="line-form">
+							<input type="submit" value="Remove">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="define_kpi_window" class="modal define_kpi">
+			<div class="modal-content">
+				<div class="topbar">
+					<div id="modal-close_define_kpi" class="modal-close">&times;</div>
+					<h1>DEFINE NEW KPI</h1>
+				</div>
+				<div class="content">
+					<p>
+						You have the possibility to define new KPI by providing a CSV file.
+					</p>
+					<p>
+						Each line of the CSV file must correspond to the following format:<br>
+						<code>KPI(1),KPI(2),...,KPI(n)</code>
+					</p>
+					<p>
+						Where each <code>KPI(i)</code> is the name of a KPI, with:
+					</p>
+					<ul>
+						<li>
+							<code>KPI(1)</code> the parent of <code>KPI(2)</code>.
+						</li>
+						<li>
+							<code>KPI(2)</code> the parent of <code>KPI(3)</code>.
+						</li>
+						<li>
+							...
+						</li>
+						<li>
+							<code>KPI(n-1)</code> the parent of <code>KPI(n)</code>.
+						</li>
+					</ul> 
+					<p>
+						Example: the following CSV file: <a id="define_KPI_csv_example_show">[show]</a>
+					</p>
+					<ul id="define_KPI_csv_example">
+						<li>society,education,students ict access</li>
+						<li>economy</li>
+						<li>economy,ict infrastructure</li>
+						<li>environment</li>
+					</ul>
+					<p>
+						will create the following KPIs: <a id="define_KPI_example_show">[show]</a>
+					</p>
+					<ul id="define_KPI_example">
+						<li>
+							society
+							<ul>
+								<li>
+									education
+									<ul>
+										<li>students ict access</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							economy
+							<ul>
+								<li>ict infrastructure</li>
+							</ul>
+						</li>
+						<li>environment</li>
+					</ul>
+					<p><strong>Warning:</strong> this operation will remove all existing KPI and the associated datasets.</p>
+					<br><br>
+					<form action="/defineKPI" method="post" enctype="multipart/form-data">
+						<div class="line-form">
+							<label for="define_kpi_starting_year">From year</label>
+							<input type="number" id="define_kpi_starting_year" name="define_kpi_starting_year" min="0" max="9999" required>
+							<label for="define_kpi_ending_year">to</label>
+							<input type="number" id="define_kpi_ending_year" name="define_kpi_ending_year" min="0" max="9999" required>
+						</div>
+						<div class="line-form">
+							<input type="file" name="kpi_csv" accept=".csv" required>
+						</div>
+						<div class="line-form">
+							<input type="submit" value="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="info_window" class="modal">
+			<div class="modal-content">
+				<div class="topbar">
+					<div id="modal-close_info" class="modal-close">&times;</div>
+					<h1>STATUS</h1>
+				</div>
+				<p id="info_content" class="content"></p>
+			</div>
+		</div>
+		<div id="progress_window" class="modal">
+			<div class="modal-content">
+				<div class="content">
+					<label for="loading">Loading data...</label>
+					<progress id="loading" value="0" max="1"></progress> 
+				</div>
+			</div>
+		</div>
+		<div id="sunburst-container">
+			<div id="sunburst-sidebar" class="sidebar">
+				<div id="sidebar-close" class="sidebar-close pointer"></div>
+				<div>
+					<h3 id="flip">Compare</h3>
+					<div>
+						<label class="switch">
+							<input type="checkbox" id="compare-toggler">
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<div id="compare-parameters">
+						<div>
+							<label for="compare-dimension">Compare between dimension </label>
+							<select id="compare-dimension"></select>
+
+							<label for="compare-type">Compare between </label>
+							<select id="compare-type">
+								<option value="areas">Areas</option>
+								<option value="years">Years</option>
+								<option value="areasAndYears">Areas and years</option>
+							</select>
+
+							<label>Compare with </label>
+							<select name="compare-selected-area" id="compare-selected-area"></select>
+							<select name="compare-selected-year" id="compare-selected-year"></select>
+						</div>
+					</div>
+					<br />
+					<button id="open-ranking">Open the ranking window</button>
+				</div>
+				<br />
+				<div>
+					<h3 id="flip">Toggle outer labels</h3>
+					<label class="switch">
+						<input type="checkbox" id="label-toggler" />
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<br />
+			</div>
+			<div id="sunburst-close" class="close pointer" title="close">
+				<i class="fas fa-window-close"></i>
+			</div>
+			<div id="svg-container"></div>
+			<div id="sunburst-comparator-container"></div>
+			<div id="sunburst-years-buttons" class='buttons'></div>
+			<div id="graph"></div>
+			<div id="rankings">
+				<div id="rankings_chart"></div>
+			</div>
+		</div>
+		<div id="ranking-container" class="ranking_clustering_container">
+			<div id="ranking-container-close" class="close pointer" title="close">
+				<i class="fas fa-window-close"></i>
+			</div>
+			<h1>AREA RANKING</h1>
+			<div class="content">
+				<div class="first-half-content">
+					<form onsubmit="return false">
+						<div class="line-form">
+							<label for="area-ranking-area" class="form-label">Area</label>
+							<div><select id="area-ranking-area"></select></div>
+						</div>
+						<div class="line-form">
+							<label for="area-ranking-year" class="form-label">Year</label>
+							<div><select id="area-ranking-year"></select></div>
+						</div>
+						<div class="line-form">
+							<label for="area-ranking-distance" class="form-label">Type of distance</label>
+							<div>
+								<select id="area-ranking-distance">
+									<option>Manhattan</option>
+									<option>Euclidian</option>
+									<option>Minkowski</option>
+								</select>
+								<input type="number" id="area-ranking-minkowski-order" min="1" value="3" style="display: none;">
+							</div>
+						</div>
+						<div class="line-form">
+							<label for="area-ranking-kpi" class="form-label">KPI</label>
+							<div><ul id="area-ranking-kpi" class="clustering-ranking-kpi-list"></ul></div>
+						</div>
+						<div class="line-form">
+							<input id="area-ranking-compute" type="submit" value="Compute">
+						</div>
+					</form>
+				</div>
+				<div class="second-half-content">
+					<table id="area-ranking-result"></table>
+				</div>
+				<div id="tooltip">
+					<button id="area-ranking-open-sunburst"></button>
+					<button id="area-ranking-open-sunburst-compare"></button>
+				</div>
+			</div>
+		</div>
+		<div id="clustering-container" class="ranking_clustering_container">
+			<div id="clustering-container-close" class="close pointer" title="close">
+				<i class="fas fa-window-close"></i>
+			</div>
+			<h1>AREA CLUSTERING</h1>
+			<div class="content">
+				<div class="first-half-content">
+					<form onsubmit="return false">
+						<div class="line-form">
+							<label for="area-clustering-nb-clusters" class="form-label">Number of clusters</label>
+							<div><input type="number" id="area-clustering-nb-clusters" min="1" value="1"></div>
+						</div>
+						<div class="line-form">
+							<label for="area-clustering-distance" class="form-label">Type of distance</label>
+							<div>
+								<select id="area-clustering-distance">
+									<option>Manhattan</option>
+									<option>Euclidian</option>
+									<option>Minkowski</option>
+								</select>
+								<input type="number" id="area-clustering-minkowski-order" min="1" value="3" style="display: none;">
+							</div>
+						</div>
+						<div class="line-form">
+							<label for="area-clustering-kpi" class="form-label">KPI</label>
+							<div><ul id="area-clustering-kpi" class="clustering-ranking-kpi-list"></ul></div>
+						</div>
+						<div class="line-form">
+							<input id="area-clustering-compute" type="submit" value="Compute">
+						</div>
+					</form>
+				</div>
+				<div class="second-half-content">
+					<p id="area-clustering-result"></p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">Developed by The Department of ICT and Natural Sciences, NTNU</div>
+		<script src="/js/bundle.js"></script>
+	</body>
+</html>
